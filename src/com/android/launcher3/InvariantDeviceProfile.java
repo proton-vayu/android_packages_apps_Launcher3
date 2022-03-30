@@ -86,6 +86,8 @@ public class InvariantDeviceProfile implements SharedPreferences.OnSharedPrefere
 
     private static final float ICON_SIZE_DEFINED_IN_APP_DP = 48;
 
+    public static final String KEY_ALLAPPS_THEMED_ICONS = "pref_allapps_themed_icons";
+
     // Constants that affects the interpolation curve between statically defined device profile
     // buckets.
     private static final float KNEARESTNEIGHBOR = 3;
@@ -206,6 +208,8 @@ public class InvariantDeviceProfile implements SharedPreferences.OnSharedPrefere
             onConfigChanged(mContext, true);
         } else if (DeviceProfile.KEY_PHONE_OVERVIEW_GRID.equals(key)) {
             onConfigChanged(mContext, false);
+        } else if (KEY_ALLAPPS_THEMED_ICONS.equals(key)) {
+            onConfigChanged(mContext);
         }
     }
 
